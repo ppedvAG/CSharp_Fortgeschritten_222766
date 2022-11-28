@@ -4,7 +4,17 @@
 	{
 		static void Main(string[] args)
 		{
-			
+			string input = "lukas";
+			string title = char.ToUpper(input[0]) + input[1..].ToLower();
+
+			string interpolated = $"{input} {2 * 2}"; //Code in string schreiben
+
+			string verbatim = @"\n\t"; //Interpretiert alles genau so wie geschrieben
+			Console.WriteLine(verbatim);
+
+			string pfad = @"C:\Users\lk3\source\repos\CSharp_Fortgeschritten_2022_11_28"; //Besonders nützlich für Pfade
+
+			string x = null;
 		}
 
 		string Test()
