@@ -46,10 +46,6 @@ internal class Program
 		//Xml();
 
 		//Binary();
-
-		XmlSerializer xml = new XmlSerializer(fahrzeuge.GetType()); //XmlSerializer: braucht ein Objekt und einen Typen zum serialisieren
-		using (FileStream fs = new(filePath, FileMode.Create)) //Xml Serialisierung braucht immer direkt ein File
-			xml.Serialize(fs, fahrzeuge);
 	}
 
 	public static void StreamWriterReader()
