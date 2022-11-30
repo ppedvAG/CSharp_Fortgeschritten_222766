@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PluginBase;
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
@@ -18,7 +19,8 @@ namespace PluginClient
 			string path = @"C:\Users\lk3\source\repos\CSharp_Fortgeschritten_2022_11_28\Plugin\bin\Debug\net6.0\Plugin.dll";
 			Assembly a = Assembly.LoadFrom(path);
 			Type pluginType = a.DefinedTypes.First(e => e.Name == "Plugin");
-			object plugin = Activator.CreateInstance(pluginType);
+			ICalculatorPlugin plugin = Activator.CreateInstance(pluginType) as ICalculatorPlugin;
+			//plugin.Addiere möglich
 			SP.Children.RemoveRange(1, 100);
 			foreach (MethodInfo m in pluginType.GetMethods())
 			{
